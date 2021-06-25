@@ -8,7 +8,6 @@ import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import { withRouter } from "react-router-dom";
 
-// method to overide material ui styles
 const useStyles = makeStyles((theme) => ({
 	cardGrid: {
 		paddingTop: theme.spacing(0),
@@ -18,26 +17,6 @@ const useStyles = makeStyles((theme) => ({
 
 const UserList = ({ github }) => {
 	const classes = useStyles();
-
-	const userSortOptions = [
-		{
-			name: "Best Match",
-			value: "",
-		},
-		{
-			name: "Most Followers",
-			value: "follower",
-		},
-		{
-			name: "Most Repositories",
-			value: "repositories",
-		},
-		{
-			name: "Recently Joined",
-			value: "joined",
-		},
-	];
-
 	if (github.loading) {
 		return <Spinner />;
 	} else {

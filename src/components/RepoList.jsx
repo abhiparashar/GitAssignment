@@ -7,7 +7,6 @@ import Spinner from "./Spinner";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 
-// method to overide material ui styles
 const useStyles = makeStyles((theme) => ({
 	cardGrid: {
 		paddingTop: theme.spacing(0),
@@ -17,26 +16,6 @@ const useStyles = makeStyles((theme) => ({
 
 const RepoList = ({ github }) => {
 	const classes = useStyles();
-
-	const repoSortOptions = [
-		{
-			name: "Best Match",
-			value: "",
-		},
-		{
-			name: "Most Stars",
-			value: "stars",
-		},
-		{
-			name: "Most Forks",
-			value: "forks",
-		},
-		{
-			name: "Recently Updated",
-			value: "Updated",
-		},
-	];
-
 	if (github.loading) {
 		return <Spinner />;
 	} else {

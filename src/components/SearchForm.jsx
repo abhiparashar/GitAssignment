@@ -7,7 +7,6 @@ import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 import { MdSearch } from "react-icons/md";
 
-// method to overide material ui styles
 const useStyles = makeStyles((theme) => ({
 	heroContent: {
 		backgroundColor: theme.palette.background.paper,
@@ -33,10 +32,8 @@ const SearchForm = ({ location, history }) => {
 
 	const [searchInput, setSearchInput] = useState(searchParams ? searchParams : "");
 
-	// assign usestyles to use in class styles
 	const classes = useStyles();
 
-	// method for controlled form
 	const onChange = (e) => setSearchInput(e.target.value);
 
 	const search = (e) => {
@@ -49,12 +46,10 @@ const SearchForm = ({ location, history }) => {
 
 	useEffect(() => {
 		setSearchInput(searchParams ? searchParams : "");
-		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [searchParams]);
 
 	return (
 		<div>
-			{/* Searh Recipes Form */}
 			<div className={classes.heroContent}>
 				<Container maxWidth="lg">
 					<form className={classes.form} noValidate onSubmit={search}>
